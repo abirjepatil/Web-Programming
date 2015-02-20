@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<script>
+
+function type1()
+
+{
+var Color =
+{
+  Red:100,
+  Green:100,
+  Blue:100,
+
+  HexString:function()
+  {
+  	//alert(this.Red.toString(16));
+    var rStr = this.Red.toString(16);
+    if (rStr.length == 1)
+      rStr = '0' + rStr;
+    var gStr = this.Green.toString(16);
+    if (gStr.length == 1)
+      gStr = '0' + gStr;
+    var bStr = this.Blue.toString(16);
+    if (bStr.length == 1)
+      bStr = '0' + bStr;
+    console.log('#' + rStr + gStr + bStr);
+  }
+}
+
+
+
+
+var myColor2 = Object.create(Color);
+myColor2.Red=10;
+myColor2.Green=20;
+myColor2.Blue=30;
+
+
+
+myColor2.HexString(); // Output:Invertebrates
+
+}
+
+
+
+function type2()
+{
+
+
+
+  
+}
+</script>
+
+
+
+
+
+<body>
+
+<p>Assignment 2</p>
+<h1>Part 2 of the assignment</h1>
+
+</body>
+</html>

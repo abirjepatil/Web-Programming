@@ -1,0 +1,347 @@
+  <!DOCTYPE html>
+    <html>
+    <head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+
+function addColumn1(tblId)
+{
+	var tblHeadObj = document.getElementById(tblId).tHead;
+	/*
+	for (var h=0; h<tblHeadObj.rows.length; h++) {
+		var newTH = document.createElement('th');
+		tblHeadObj.rows[h].appendChild(newTH);
+		newTH.innerHTML = '[th] row:' + h + ', cell: ' + (tblHeadObj.rows[h].cells.length - 1)
+	}
+*/
+	var tblBodyObj = document.getElementById(tblId).tBodies[0];
+	for (var i=0; i<tblBodyObj.rows.length; i++) {
+		var newCell = tblBodyObj.rows[i].insertCell(-1);
+		
+				var id=String("["+i+""+(tblBodyObj.rows[i].cells.length - 1))+"]";
+				//alert(id);
+				//alert('<input type="text" name="fname"'+" id='"+id+"'>" );
+
+		newCell.innerHTML = '<input type="text" name="fname"'+"id='"+id+"'>" 
+
+
+	}
+}
+
+
+
+function addData(tblId)
+{
+    var e = document.getElementById("rows");
+    var strUserRows = e.options[e.selectedIndex].value;
+    
+    var f = document.getElementById("cols");
+    var strUserColumns = f.options[f.selectedIndex].value;
+
+	var tblHeadObj = document.getElementById(tblId).tHead;
+
+	var tblBodyObj = document.getElementById(tblId).tBodies[0];
+	for (var i=0; i<tblBodyObj.rows.length; i++) {
+		var newCell = tblBodyObj.rows[i].insertCell(-1);
+		
+		   
+			var id=String("["+i+""+(tblBodyObj.rows[i].cells.length - 1))+"]";
+
+					//alert(id);
+					newCell.innerHTML = document.getElementById(id).value;
+		
+
+
+
+
+	}
+
+	
+//alert(strUserRows+strUserColumns);
+	for(var i=0;i<strUserRows;i++)
+	{
+			for(var j=0;j<strUserColumns;j++)
+			{
+					
+
+			}
+
+	}
+
+
+}
+
+function render()
+{
+	var Table = document.getElementById("tblSample1");
+    Table.innerHTML = " ";
+
+    var e = document.getElementById("rows");
+    var strUserRows = e.options[e.selectedIndex].value;
+    
+    var f = document.getElementById("cols");
+    var strUserColumns = f.options[f.selectedIndex].value;
+    
+
+      var table = document.getElementById("tblSample1");
+    for(i=0;i<strUserRows;i++)
+    {
+    
+        var row = table.insertRow(i);
+
+		
+
+    }
+
+for(j=0;j<strUserColumns;j++)
+			{		
+				addData('tblSample1');
+  			 // alert("loop");
+    
+    	}
+   
+
+
+
+
+}
+
+function addColumn() {
+
+	var Table = document.getElementById("tblSample");
+    Table.innerHTML = " ";
+
+	var e = document.getElementById("rows");
+    var strUserRows = e.options[e.selectedIndex].value;
+    
+    var f = document.getElementById("cols");
+    var strUserColumns = f.options[f.selectedIndex].value;
+    
+   // alert(strUserRows+"rows and "+strUserColumns);
+
+    var table = document.getElementById("tblSample");
+    for(i=0;i<strUserRows;i++)
+    {
+    
+    var row = table.insertRow(i);
+
+		
+
+    }
+
+
+for(j=0;j<strUserColumns;j++)
+			{		
+				addColumn1('tblSample');
+  			 // alert("loop");
+    
+    	}
+   
+}
+
+  window.onload = function () {
+    var select = document.getElementById("rows");
+    for(var i = 1; i <= 1000; i++) {
+        var option = document.createElement('option');
+        option.text = option.value = i;
+        select.add(option, 0);
+    }
+
+
+    var select = document.getElementById("cols");
+    for(var i = 1; i <= 1000; i++) {
+        var option = document.createElement('option');
+        option.text = option.value = i;
+        select.add(option, 0);
+    }
+};
+
+
+
+
+
+    </script>
+
+<script>
+
+
+$(document).ready(function(){
+    $("#jqcreate").click(function(){
+
+    var Table = document.getElementById("tbl2");
+    Table.innerHTML = " ";
+    var e = document.getElementById("rows");
+    var strUserRows = e.options[e.selectedIndex].value;
+    
+    var f = document.getElementById("cols");
+    var strUserColumns = f.options[f.selectedIndex].value;
+
+       // alert("The paragraph was clicked."+strUserRows+""+strUserColumns);
+
+        for(var i=0;i<strUserRows;i++)
+        		{
+                  
+        				var cells=null;
+        				for(var j=0;j<strUserColumns;j++)
+        				{
+        				var id= "JQ"+i+''+j+"";		
+        				//alert(id);
+						cells=cells+"<td><input id='"+id+"'></td>";	   
+						}
+
+                 $('#tbl2').append('<tr>'+cells+'</tr>');
+    			}
+
+    });
+
+
+
+ $("#jqdisplay").click(function(){
+
+    var Table = document.getElementById("tbl1");
+    Table.innerHTML = " ";
+    var e = document.getElementById("rows");
+    var strUserRows = e.options[e.selectedIndex].value;
+    
+    var f = document.getElementById("cols");
+    var strUserColumns = f.options[f.selectedIndex].value;
+
+       
+        for(var i=0;i<strUserRows;i++)
+        		{
+                  
+        				var cells=null;
+        				for(var j=0;j<strUserColumns;j++)
+        				{
+        				var id= "JQ"+i+''+j+"";		
+        				//alert(id);
+        				var text_value = $("#"+id).val();
+						//alert(text_value);
+						cells=cells+"<td>"+text_value+"</td>";	   
+						}
+
+                 $('#tbl1').append('<tr>'+cells+'</tr>');
+    			}
+
+
+
+});
+
+
+
+})
+;
+
+
+//displaying the data
+
+
+
+</script>
+
+    </head>
+
+    <body bgcolor="#bdc3c7">
+
+
+<center>
+<br><br><br><br><br>
+		<table>
+		<tr>
+     	<td>
+      How many Rows would you like to have:  
+      	</td>
+      	<td><select id="rows" name="rows"></select></td>
+        </tr>
+        <tr><td>
+      How many Columns would you like to have:  
+      	</td>
+      	<td><select id="cols" name="cols"></select></td>
+      	</tr>
+      </table>
+
+<br><br><br><br><br>
+<table border="1">
+<tr width="100%">
+
+<td style="background-color:#3498db;width:50%;">
+<center>
+<button onclick="addColumn()">Create</button>
+
+
+
+<table id="tblSample" border="1">
+<thead>
+
+</thead>
+<tbody>
+<tr>
+ 
+</tr>
+
+</tbody>
+</table>
+
+
+<button onclick="render()">CREATE TABLE</button>
+<table id="tblSample1" border="1">
+<thead>
+
+</thead>
+<tbody>
+<tr>
+ 
+</tr>
+
+</tbody>
+</table>
+</center>
+</td>
+
+</tr>
+
+<tr>
+
+
+<td width="100%" style="background-color:#1abc9c;width:50%;">
+<center>
+<button id="jqcreate">CREATE TABLE</button>
+
+<table id="tbl2" border="1">
+<thead>
+
+</thead>
+<tbody>
+<tr>
+ 
+</tr>
+
+</tbody>
+</table>
+
+<button id="jqdisplay">Display Data</button>
+
+<table id="tbl1" border="1">
+<thead>
+
+</thead>
+<tbody>
+<tr>
+ 
+</tr>
+
+</tbody>
+</table>
+
+</td>
+
+</tr>
+</center>
+</table>
+
+
+</center>
+
+
+    </body>
+    </html> 

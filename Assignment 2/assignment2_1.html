@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<script>
+
+function addrow()
+{
+
+// id, first name, last name, age.	
+var students=[];
+students[0]={id:1,fname:"George", age:32, lname:"Jobs"};
+students[1]={id:2,fname:"Edward", age:17, lname:"Jacob"};
+students[2]={id:3,fname:"Christine", age:58, lname:"Adie"};
+students[3]={id:4,fname:"Sarah", age:62, lname:"Dollinger"};
+
+
+// Find a <table> element with id="myTable":
+var table = document.getElementById("myTable");
+
+
+
+//Loop through the array and alert the student names
+
+var arrayLength = students.length;
+for (var i = 0; i < arrayLength; i++) {
+
+console.log(students[i].id+students[i].fname+students[i].lname+students[i].age);
+// Create an empty <tr> element and add it to the 1st position of the table:
+var row = table.insertRow(0);
+
+// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 =row.insertCell(2);
+
+var cell4 =row.insertCell(3);
+
+
+// Add some text to the new cells:
+cell1.innerHTML = students[i].id;
+cell2.innerHTML = students[i].fname;
+cell3.innerHTML = students[i].lname;
+cell4.innerHTML = students[i].age;
+
+
+
+    
+    //Do something
+}
+}
+
+//creating a javascript color object
+/*
+function Color(r,g,b)
+{
+  this.Red = r;
+  this.Green = g;
+  this.Blue = b;
+
+  this.HexString = function()
+  {
+    var rStr = this.Red.toString(16);
+    if (rStr.length == 1)
+      rStr = '0' + rStr;
+    var gStr = this.Green.toString(16);
+    if (gStr.length == 1)
+      gStr = '0' + gStr;
+    var bStr = this.Blue.toString(16);
+    if (bStr.length == 1)
+      bStr = '0' + bStr;
+    console.log('#' + rStr + gStr + bStr);
+  }
+}
+
+myColor = new Color(10,20,30);
+myColor.HexString();
+*/
+
+
+</script>
+
+
+
+
+
+<body onload="addrow();">
+
+<p>Assignment 2</p>
+<h1>Part 1 of the assignment</h1>
+<table id="myTable" border="1">
+</table>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<script>
+//type one to create an object
+function Clr(red,green,blue)
+{
+  this.Red = red;
+  this.Green = green;
+  this.Blue = blue;
+
+  this.hexconvert = function()
+  {
+    var r = this.Red.toString(16);
+    if (r.length == 1)
+      r = '0' + r;
+    var g = this.Green.toString(16);
+    if (g.length == 1)
+      g = '0' + g;
+    var b = this.Blue.toString(16);
+    if (b.length == 1)
+      b = '0' + b;
+    
+      alert(r+g+b);
+     }
+}
+
+
+
+
+var Clr2 =
+{
+  Red:100,
+  Green:100,
+  Blue:100,
+
+  hexconvert:function()
+  {
+    //alert(this.Red.toString(16));
+    var r = this.Red.toString(16);
+    if (r.length == 1)
+      r = '0' + r;
+    var g = this.Green.toString(16);
+    if (g.length == 1)
+      gStr = '0' + gStr;
+    var b = this.Blue.toString(16);
+    if (b.length == 1)
+      b = '0' + b;
+    alert(r + g + b);
+  }
+}
+
+
+
+
+function test()
+{
+test = new Clr(10,20,30);
+test.hexconvert();
+
+
+
+var test = Object.create(Clr2);
+test.Red=30;
+test.Green=20;
+test.Blue=30;
+test.hexconvert();
+
+}
+
+</script>
+
+
+
+
+
+<body onload="test();">
+
+
+
+</body>
+</html>
